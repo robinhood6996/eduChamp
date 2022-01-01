@@ -1,16 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LogIn from './Pages/Form/LogIn/LogIn';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Register from './Pages/Form/Register/Register';
 function App() {
   return (
-    <div className="App">
-      <div className="heading">
-        <h1>Log In </h1>
-      </div>
-      <form action="">
-        <input type="email" name='email' className='' placeholder='You Email' />
-        <input type="password" name='password' className='' placeholder='Your Password' />
-      </form>
+    <div className="">
+      <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
