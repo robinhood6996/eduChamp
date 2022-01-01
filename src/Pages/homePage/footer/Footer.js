@@ -122,7 +122,7 @@ const Footer = () => {
 
                 <p>
                     <strong className="text-secondary">
-                        Copy right By &copy;  EDUCamp 2022
+                        Copy right By &copy;  EDUCamp 2022 
                     </strong>
                 </p>
             </div>
