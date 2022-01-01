@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css'
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
 
@@ -122,7 +122,7 @@ const Footer = () => {
 
                 <p>
                     <strong className="text-secondary">
-                        Copy right By &copy;  EDUCamp 2022 
+                        Copy right By &copy;  EDUCamp 2022
                     </strong>
                 </p>
             </div>
