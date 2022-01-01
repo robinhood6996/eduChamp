@@ -1,0 +1,60 @@
+
+/* Column--------- 01---------- */
+.footer_container{
+    text-align: center;
+    background-color: #343a40; 
+    color: white;
+}
+
+.footer_form_input{
+    padding: 5px 2px;
+    margin-left: 3px;
+}
+.footer_form_submit_btn{
+    padding: 6px 20px;
+    margin-left: 3px;
+    border: 1px solid black;
+    color: white;
+    background-color: #f7b205;
+    transition: .8s;
+}
+.footer_form_submit_btn:hover{
+    background-color: blueviolet;
+}
+
+/* colmn-------02---------- */
+.footer_contact-items{
+    padding-top: 3px;
+}
+.footer_list_items li{
+list-style: none;
+margin: 6px 0;
+}
+
+.footer_contact-items li{
+    list-style: none;
+}
+
+/* colmn-------03---------- */
+.footer_contact-items li a{
+       text-decoration: none;
+    font-size: 20px;
+    color: #e7e2e2;
+}
+/* colmn-------03---------- */
+.footer_gallery{
+padding: 5px 10px;
+}
+.footer-gallery-image img{
+    width: 100%;
+    /* height: 70px; */
+    border: 2px solid #343a40;
+    }
+
+.footer_line{
+    width: 25%;
+    margin: auto;
+    padding: 2px;
+    background: white;
+    border-radius: 10px;
+}

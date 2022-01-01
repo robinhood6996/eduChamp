@@ -1,9 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Pages/homePage/home/Home';
 function App() {
   return (
     <div className="App">
+
+      {/* ===================Home Page (মোঃ রাহাত ইসলাম ) ===============*/}
+
+      <Home />
+
+      {/* ========================== */}
+
       <div className="heading">
         <h1>Log In </h1>
       </div>
