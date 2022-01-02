@@ -7,16 +7,11 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/Form/Register/Register';
-<<<<<<< HEAD
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
 
-=======
-import Home from './Pages/Home/Home/Home'
-import Navigation from './Pages/Shared/Navigation/Navigation';
-import Footer from './Pages/Home/Footer/Footer';
->>>>>>> 0eb560bce38e483d42362a9143687aa424948cff
+
 
 function App() {
   return (
