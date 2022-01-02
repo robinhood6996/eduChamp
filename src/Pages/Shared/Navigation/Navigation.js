@@ -1,15 +1,17 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
-
+import logo from '../../../Images/logo-white.png';
 const Navigation = () => {
-    const {user, logOut} = useFirebase()
+    const { user, logOut } = useFirebase()
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Edu Champ</Navbar.Brand>
+                    <Navbar.Brand href="#home">
+                        <Image src={logo}></Image>
+                    </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                     <Nav className="mx-auto">
@@ -40,10 +42,10 @@ const Navigation = () => {
                     
                     </Navbar.Text>
                     </Navbar.Collapse>
-                    
+
                 </Container>
             </Navbar>
-        </div>
+        </div >
     );
 };
 

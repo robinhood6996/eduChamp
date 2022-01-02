@@ -7,16 +7,16 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/Form/Register/Register';
-import Home from './Pages/Home/Home/Home'
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Footer from './Pages/Shared/Footer/Footer';
 import AllCourse from './Pages/AllCourse/AllCourse';
+import Home from './Pages/Home/Home/Home';
 
 function App() {
   return (
     <div className="body">
       <BrowserRouter>
-      <Navigation></Navigation>
+        <Navigation></Navigation>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
