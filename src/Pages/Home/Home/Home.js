@@ -1,14 +1,16 @@
 import React from 'react';
-import Navigation from '../../Shared/Navigation/Navigation';
-import Footer from '../Footer/Footer'
+
 import ContactForm from '../../Form/ContactForm/ContactForm'
 import ChooseUs from '../ChooseUs/ChooseUs';
+import Navigation from '../../Shared/Navigation/Navigation';
+import Slider from '../../Shared/Slider/Slider';
 const Home = () => {
     return (
         <>
-        <ChooseUs></ChooseUs>
-        <ContactForm></ContactForm>
-        </>        
+            <Slider></Slider>
+            <ChooseUs></ChooseUs>
+
+        </>
     );
 };
 
