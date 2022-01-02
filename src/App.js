@@ -7,7 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/Form/Register/Register';
-import Home from './Pages/homePage/Home/Home'
+import Home from './Pages/homePage/home/Home';
 
 function App() {
   return (
