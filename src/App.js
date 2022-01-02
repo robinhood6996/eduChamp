@@ -9,11 +9,12 @@ import {
 import Register from './Pages/Form/Register/Register';
 import Home from './Pages/Home/Home/Home'
 import Navigation from './Pages/Shared/Navigation/Navigation';
-import Footer from './Pages/Home/Footer/Footer';
+import Footer from './Pages/Shared/Footer/Footer';
+import AllCourse from './Pages/AllCourse/AllCourse';
 
 function App() {
   return (
-    <div className="app">
+    <div className="body">
       <BrowserRouter>
       <Navigation></Navigation>
         <Routes>
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/allCourse" element={<AllCourse />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

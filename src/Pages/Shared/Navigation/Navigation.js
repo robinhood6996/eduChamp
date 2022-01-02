@@ -14,7 +14,7 @@ const Navigation = () => {
                     <Navbar.Collapse className="justify-content-end">
                     <Nav className="mx-auto">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                    <Nav.Link as={Link} to="/features">Courses</Nav.Link>
+                    <Nav.Link as={Link} to="/allCourse">Courses</Nav.Link>
                     <Nav.Link as={Link} to="/features">About us</Nav.Link>
                     <Nav.Link as={Link} to="/pricing">Blog</Nav.Link>
                     <Nav.Link as={Link} to="/pricing">Contact us</Nav.Link>

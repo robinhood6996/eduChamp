@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
-import ContactForm from '../ContactForm/ContactForm';
 
 const LogIn = () => {  
     const [details, setDetails] = useState({})
