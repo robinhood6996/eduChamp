@@ -68,7 +68,7 @@ const [error, setError] = useState('')
   }
   console.log(user);
   return {
-    registerWithGoogleAndPass, logOut, logInWithEmailAndPass, error, setError
+    registerWithGoogleAndPass, logOut, logInWithEmailAndPass, error, setError, user
   }
 }
 

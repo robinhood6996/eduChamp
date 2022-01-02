@@ -7,12 +7,14 @@ import {
   Route,
 } from "react-router-dom";
 import Register from './Pages/Form/Register/Register';
-import Home from './Pages/homePage/Home/Home'
+import Home from './Pages/Home/Home/Home'
+import Navigation from './Pages/Shared/Navigation/Navigation';
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
+      <Navigation></Navigation>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
