@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 
 const Footer = () => {
 
@@ -11,6 +11,7 @@ const Footer = () => {
 
     return (
         <div className='footer_container'>
+            <Container >
             <div className="ms-2 p-3">
                 <Row xs={1} md={4} className="g-2">
 
@@ -126,6 +127,7 @@ const Footer = () => {
                     </strong>
                 </p>
             </div>
+        </Container>
         </div>
     );
 };

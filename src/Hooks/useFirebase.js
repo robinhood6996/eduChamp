@@ -1,17 +1,17 @@
 import firebaseInitializing from "../Firebase/firebase.init"
-import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,updateProfile,signOut,signInWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged,updateProfile,signOut,signInWithEmailAndPassword, GoogleAuthProvider ,signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
 
 firebaseInitializing()
 const useFirebase = () => {
 const auth = getAuth();
+const googleProvider = new GoogleAuthProvider();
 const [user, setUser] = useState({})
 const [error, setError] = useState('')
 
   const registerWithGoogleAndPass = (email, password, name, image) => {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-
       const user = userCredential.user;
       setError('')
       updateProfile(auth.currentUser, {
@@ -25,7 +25,6 @@ const [error, setError] = useState('')
 
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       setError(errorMessage)
 
@@ -41,17 +40,28 @@ const [error, setError] = useState('')
       setError('')
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       setError(errorMessage)
     });
+  }
+
+  const googleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+    .then((result) => {
+     const user = result.user;
+      setUser(user)
+      setError('')
+  }).catch((error) => {
+    const errorMessage = error.message;
+    setError(errorMessage)
+  });
+
   }
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
           setUser(user)
-          const uid = user.uid;
-          // ...
+
         } else {
           setUser({})
         }
@@ -68,7 +78,7 @@ const [error, setError] = useState('')
   }
   console.log(user);
   return {
-    registerWithGoogleAndPass, logOut, logInWithEmailAndPass, error, setError
+    registerWithGoogleAndPass, logOut, logInWithEmailAndPass, error, setError, user,googleSignIn
   }
 }
 
