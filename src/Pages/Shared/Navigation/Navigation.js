@@ -33,7 +33,7 @@ const Navigation = () => {
                     </Navbar.Text>
                     <Navbar.Text>
                     {
-                        user.email && <img className='me-2' style={{height:'50px', width:'50px', borderRadius:'50%'}} src={user?.photoURL ? user.photoURL : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png '} alt="" />
+                        user?.email ? <img className='me-2' style={{height:'50px', width:'50px', borderRadius:'50%'}} src={user?.photoURL} alt="" /> : ''
                     }
                     {!user?.email ? <Link to='/login' className="btn btn-success">Login</Link> :  <button onClick={logOut} className="btn btn-danger">Log Out</button>
                     }

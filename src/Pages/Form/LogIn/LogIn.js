@@ -6,7 +6,7 @@ import ContactForm from '../ContactForm/ContactForm';
 
 const LogIn = () => {  
     const [details, setDetails] = useState({})
-    const {logOut, logInWithEmailAndPass, error} = useFirebase()
+    const {logOut, logInWithEmailAndPass, error,googleSignIn} = useFirebase()
     const onBlurHandle = e => {
         const name = e.target.name
         const value = e.target.value
@@ -37,9 +37,8 @@ const LogIn = () => {
             <button className='btn btn-danger ms-3' onClick={logOut}>Log Out </button>
         </form>
         <h5 className='text-danger my-1'>{error}</h5>
-            <h6 className=' mb-2'>Create a new account <Link to='/register'>Register</Link></h6>
-
-            <ContactForm></ContactForm>
+        <h6 className=' mb-2'>Create a new account <Link to='/register'>Register</Link></h6>
+        <button onClick={googleSignIn} className="btn btn-warning">Google Sign In</button>
         </Container>
 
     );
