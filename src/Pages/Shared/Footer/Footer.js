@@ -10,7 +10,7 @@ const Footer = () => {
 
 
     return (
-        <div className='footer_container'>
+        <div className='footer_container pt-5'>
             <Container >
             <div className="ms-2 p-3">
                 <Row xs={1} md={4} className="g-2">

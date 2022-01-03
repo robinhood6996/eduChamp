@@ -4,7 +4,7 @@ import Iframe from 'react-iframe'
 
 const OurStory = () => {
     return (
-        <div className='mt-5'>
+        <div className='my-5'>
             <Row className='align-items-center'>
                 <Col lg='7'>
                 <Iframe url="https://www.youtube.com/embed/99RWZsEITx4"
