@@ -16,6 +16,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import SingleCourse from './Pages/SingleCourse/SingleCourse';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
