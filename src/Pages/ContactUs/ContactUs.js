@@ -14,7 +14,7 @@ const ContactUs = () => {
                         <div className="contact-info ">
                             <div className="heading">
                             <h1>Contact Info</h1>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page 100</p>
                             </div>
                             
                         </div>
