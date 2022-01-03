@@ -7,7 +7,7 @@ const OurStory = () => {
         <div className='mt-5'>
             <Row className='align-items-center'>
                 <Col lg='7'>
-                <Iframe url="http://www.youtube.com/embed/xDMP3i36naA"
+                <Iframe url="https://www.youtube.com/embed/99RWZsEITx4"
                         width="100%"
                         height="350px"
                         id="myId"
