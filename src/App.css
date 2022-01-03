@@ -11,3 +11,7 @@ body{
 a{
     text-decoration: none;
 }
+
+.heading{
+    font-weight: 600;
+}

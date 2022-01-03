@@ -66,7 +66,7 @@ const SingleCourse = () => {
                                     <p className='overview-item fw-bold icon'>$120</p>
                                 </div>
                                 <div className="lecture d-flex justify-content-between border-bottom pt-2 pb-2">
-                                    <button className='buy-btn'>Click to Enroll Now</button>
+                                    <button className='buy-btn p-2'>Click to Enroll Now</button>
                                 </div>
 
 
