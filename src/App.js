@@ -17,6 +17,8 @@ import ContactUs from './Pages/ContactUs/ContactUs';
 import SingleCourse from './Pages/SingleCourse/SingleCourse';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
+import Checkout from './Pages/Checkout/Checkout/Checkout';
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/makeAdmin" element={<MakeAdmin />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
