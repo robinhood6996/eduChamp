@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Review from '../Home/Review/Review';
 import OurStory from './OurStory/OurStory';
 
 const data = [
@@ -34,6 +35,7 @@ const AboutUs = () => {
                     }
                 </Row>
                 <OurStory></OurStory>
+                <Review></Review>
             </Container>
         </div>
     );
