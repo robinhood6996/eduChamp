@@ -1,6 +1,7 @@
-import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogIn from './Pages/Form/LogIn/LogIn';
+import './App.css';
 import {
   BrowserRouter,
   Routes,
