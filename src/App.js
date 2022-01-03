@@ -1,6 +1,7 @@
-import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogIn from './Pages/Form/LogIn/LogIn';
+import './App.css';
 import {
   BrowserRouter,
   Routes,
@@ -13,6 +14,8 @@ import AllCourse from './Pages/AllCourse/AllCourse';
 import Home from './Pages/Home/Home/Home';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import SingleCourse from './Pages/SingleCourse/SingleCourse';
+import Blogs from './Pages/Blogs/Blogs/Blogs';
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/allCourse" element={<AllCourse />} />
+          <Route path="/course" element={<SingleCourse />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
         </Routes>

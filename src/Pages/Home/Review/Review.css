@@ -1,0 +1,33 @@
+.review-section{
+    background: url('../../../Images//review-bg.jpg');
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.review-section::after{
+  background: linear-gradient(
+45deg,#100018,#26006c 50%,#110038);
+    opacity: 0.8;
+}
+.review-section::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.review-heading{
+    z-index: 2;
+    color: rgb(255, 255, 254) !important;
+    opacity: 1;
+    margin-bottom: 30px;
+}
+.content-review{
+    position: relative;
+    z-index: 1;
+}

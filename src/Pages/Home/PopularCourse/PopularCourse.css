@@ -1,0 +1,14 @@
+.buy-btn{
+    background-color: #F7B205;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+.buy-btn:hover{
+    background-color: #F7B205;
+color: black;
+}
+
+.popular-course-section{
+background-color: #F7F9FB;
+}

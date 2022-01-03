@@ -18,7 +18,11 @@ const Navigation = () => {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/allCourse">Courses</Nav.Link>
                             <Nav.Link as={Link} to="/aboutUs">About us</Nav.Link>
+<<<<<<< HEAD
                             <Nav.Link as={Link} to="/pricing">Blog</Nav.Link>
+=======
+                            <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
+>>>>>>> 6c1b16f80b8bba3ad12fc03db2b6293c8021b451
                             <Nav.Link as={Link} to="/contactUs">Contact us</Nav.Link>
                         </Nav>
                         <Navbar.Text>
