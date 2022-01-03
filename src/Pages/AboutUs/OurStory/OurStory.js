@@ -17,7 +17,7 @@ const OurStory = () => {
                 </Col>
                 <Col lg='5'>
                 <div className="heading mb-4">
-                    <h1>Our Story</h1>
+                    <h1>See Our Story</h1>
                 </div>
                 <div className="details">
                     <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
