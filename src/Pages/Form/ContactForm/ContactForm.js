@@ -15,7 +15,7 @@ const ContactForm = () => {
             <br />
             <input type="phone" name='phone' className='w-100 my-2 p-2' placeholder='Your Phone' />
             <br />
-            <textarea name="message" placeholder='Your Message' id="" className='w-100 p-2' cols="30" rows="10" ></textarea>
+            <textarea name="message" placeholder='Your Message' id="" className='w-100 p-2' cols="10" rows="5" ></textarea>
             <br />
             <input value="Send Message" type="submit" className='btn btn-success' />
             </form>
