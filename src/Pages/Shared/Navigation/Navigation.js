@@ -20,6 +20,7 @@ const Navigation = () => {
                     <Nav.Link as={Link} to="/aboutUs">About us</Nav.Link>
                     <Nav.Link as={Link} to="/pricing">Blog</Nav.Link>
                     <Nav.Link as={Link} to="/contactUs">Contact us</Nav.Link>
+                    <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                     </Nav>
                     <Navbar.Text>
                     <i className="fab fa-facebook-f text-danger fs-5 me-3"></i>
