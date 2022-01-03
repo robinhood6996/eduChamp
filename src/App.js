@@ -14,6 +14,7 @@ import AllCourse from './Pages/AllCourse/AllCourse';
 import Home from './Pages/Home/Home/Home';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
+import SingleCourse from './Pages/SingleCourse/SingleCourse';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="/allCourse" element={<AllCourse />} />
+          <Route path="/course" element={<SingleCourse />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
         </Routes>

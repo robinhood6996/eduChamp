@@ -1,0 +1,48 @@
+
+.course-brand{
+    background-image: url('../../Images//single-course-bg.jpg');
+    height: 280px;
+    background-size: cover;
+    background-position: 50%;
+    display: table;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+.course-brand::after{
+   background: linear-gradient(
+45deg,#100018,#26006c 50%,#110038);
+opacity: 0.8;
+}
+
+.course-brand::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.course-page-heading{
+    position: relative;
+    z-index: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading-course{
+    vertical-align: middle;
+}
+
+.icon{
+    color: #26006c !important;
+}
+
+.overview-item{
+    color: #5F6473;
+}
