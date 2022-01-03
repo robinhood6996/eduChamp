@@ -20,15 +20,16 @@ const Navigation = () => {
                             <Nav.Link as={Link} to="/aboutUs">About us</Nav.Link>
                             <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/contactUs">Contact us</Nav.Link>
+                            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                         </Nav>
                         <Navbar.Text>
-                            <i className="fab fa-facebook-f text-danger fs-5 me-3"></i>
+                            <i className="fab fa-facebook-f text-danger fs-5 me-3 social-icon"></i>
                         </Navbar.Text>
                         <Navbar.Text>
-                            <i className="fab fa-google-plus-g text-danger fs-5 me-3"></i>
+                            <i className="fab fa-google-plus-g text-danger fs-5 me-3 social-icon"></i>
                         </Navbar.Text>
                         <Navbar.Text>
-                            <i className="fab fa-linkedin-in text-danger fs-5 me-3"></i>
+                            <i className="fab fa-linkedin-in text-danger fs-5 me-3 social-icon"></i>
                         </Navbar.Text>
                         <Navbar.Text>
 

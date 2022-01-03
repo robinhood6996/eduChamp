@@ -1,0 +1,14 @@
+.login-area{
+    height: 100vh;
+}
+
+.google-login{
+    background:black;
+    color: white;
+    border: none; 
+    padding: 15px;
+}
+.google-login:hover{
+     background:black;
+    color: white;
+}

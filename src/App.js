@@ -16,7 +16,6 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import SingleCourse from './Pages/SingleCourse/SingleCourse';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
-
 function App() {
   return (
     <div className="body">
