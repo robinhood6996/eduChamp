@@ -17,9 +17,9 @@ const Navigation = () => {
                     <Nav className="mx-auto">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
                     <Nav.Link as={Link} to="/allCourse">Courses</Nav.Link>
-                    <Nav.Link as={Link} to="/features">About us</Nav.Link>
+                    <Nav.Link as={Link} to="/aboutUs">About us</Nav.Link>
                     <Nav.Link as={Link} to="/pricing">Blog</Nav.Link>
-                    <Nav.Link as={Link} to="/pricing">Contact us</Nav.Link>
+                    <Nav.Link as={Link} to="/contactUs">Contact us</Nav.Link>
                     </Nav>
                     <Navbar.Text>
                     <i className="fab fa-facebook-f text-danger fs-5 me-3"></i>

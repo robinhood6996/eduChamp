@@ -3,20 +3,23 @@ import { Container } from 'react-bootstrap';
 
 const ContactForm = () => {
     return (
-        <Container className='py-5 text-center'>
+        <div className=''>
             <div className="heading mb-3">
-                <h1>Contact With Us</h1>
+                <h1>Get In Touch</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
             </div>
-            <form className='w-50 mx-auto' action="">
+            <form className=' mx-auto' action="">
             <input type="text" name='name' className='w-100 my-2 p-2' placeholder='Your Name' />
             <br />
             <input type="email" name='email' className='w-100 my-2 p-2' placeholder='Your Email' />
             <br />
-            <textarea name="message" placeholder='Your Message' id="" className='w-100' cols="30" rows="10"></textarea>
+            <input type="phone" name='phone' className='w-100 my-2 p-2' placeholder='Your Phone' />
             <br />
-            <input value="Send" type="submit" className='btn btn-success' />
+            <textarea name="message" placeholder='Your Message' id="" className='w-100 p-2' cols="30" rows="10" ></textarea>
+            <br />
+            <input value="Send Message" type="submit" className='btn btn-success' />
             </form>
-        </Container>
+        </div>
     );
 };
 
