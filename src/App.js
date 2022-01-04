@@ -22,6 +22,7 @@ import Checkout from './Pages/Checkout/Checkout/Checkout';
 import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import EnrolledAllCourse from './Pages/Dashboard/EnrolledAllCourse/EnrolledAllCourse';
 import AddCourse from './Pages/Form/AddCourse/AddCourse';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/allCourse" element={<AllCourse />} />
+          <Route path="/allCourse" element={<PrivateRoute><AllCourse /></PrivateRoute>} />
           <Route path="/course" element={<SingleCourse />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />

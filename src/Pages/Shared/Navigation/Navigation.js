@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import logo from '../../../Images/logo-white.png';
 const Navigation = () => {
-    const { user, logOut } = useFirebase()
+    const { user, logOut , admin} = useFirebase()
+    console.log(admin);
     return (
         <div>
+
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">
