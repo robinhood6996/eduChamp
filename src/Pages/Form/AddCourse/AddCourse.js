@@ -35,9 +35,10 @@ const AddCourse = () => {
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Course Added');
+                    e.target.reset();
                 }
             });
-        e.target.reset();
+
     }
     return (
         <Container className='py-5'>
@@ -60,19 +61,19 @@ const AddCourse = () => {
                             <option value="Math">Math</option>
                             <option value="English Spoken">English Spoken</option>
                         </Form.Select>
-
+                        <br />
                         <Form.Select onChange={e => setLanguage(e.target.value)} aria-label="Default select example" required>
                             <option>Select Course Language</option>
                             <option value="English">English</option>
                             <option value="Bangla">Bangla</option>
                         </Form.Select>
-
+                        <br />
                         <Form.Select onChange={e => setSkill(e.target.value)} aria-label="Default select example" required>
                             <option>Select Skill Level</option>
                             <option value="Beginner">Beginner</option>
                             <option value="Intermediate">Intermediate</option>
                         </Form.Select>
-
+                        <br />
                         <Form.Group controlId="formFile" className="mb-3">
                             <Form.Label>Upload Course Thumbnail</Form.Label>
                             <Form.Control type="file" onChange={e => setThumb(e.target.files[0])} required />
@@ -94,7 +95,7 @@ const AddCourse = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Instructor Name</Form.Label>
-                            <Form.Control onChange={e => setInstructor(e.target.value)} type="text" placeholder="Drop an over video link" required />
+                            <Form.Control onChange={e => setInstructor(e.target.value)} type="text" placeholder="Instructor Name" required />
                         </Form.Group>
                         <Button type='submit'>Add Course</Button>
                     </Form>

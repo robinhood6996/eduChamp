@@ -1,9 +1,35 @@
-import React from 'react';
-import { Table } from 'react-bootstrap';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Button, Table } from 'react-bootstrap';
 import './AllCourse.css';
 
 
 const AdminCourses = () => {
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/course')
+            .then(res => {
+                setCourses(res.data)
+            })
+    }, []);
+
+
+    const deleteCourseHandle = (id) => {
+        const confirm = window.confirm('Are you sure you want to delete ? ');
+        if (confirm) {
+            const url = `http://localhost:5000/course/${id}`
+            axios.delete(url)
+                .then(res => {
+                    if (res.data.deletedCount) {
+                        const allCourses = courses;
+                        const restCourses = allCourses.filter(course => course._id !== id);
+                        setCourses(restCourses);
+                        alert('Course Deleted');
+                    }
+                })
+        }
+    }
     return (
         <div>
             <Table striped bordered hover>
@@ -11,28 +37,23 @@ const AdminCourses = () => {
                     <tr>
                         <th>#</th>
                         <th>Title</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Category</th>
+                        <th>Instructor</th>
+                        <th>Action</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td colSpan={2}>Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    {
+                        courses.map((course, index) => <tr>
+                            <td>{index}</td>
+                            <td>{course.title}</td>
+                            <td>{course.category}</td>
+                            <td>{course.instructor}</td>
+                            <td><Button variant={"warning"}>Edit</Button> || <Button variant={"danger"} onClick={() => deleteCourseHandle(course._id)}>Delete</Button></td>
+                        </tr>)
+                    }
+
                 </tbody>
             </Table>
         </div>
