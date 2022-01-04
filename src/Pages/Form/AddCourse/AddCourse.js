@@ -9,6 +9,9 @@ const AddCourse = () => {
     const [price, setPrice] = useState('');
     const [details, setDetails] = useState('');
     const [video, setVideo] = useState('');
+    const [language, setLanguage] = useState('');
+    const [skill, setSkill] = useState('');
+    const [instructor, setInstructor] = useState('');
 
 
 
@@ -24,6 +27,9 @@ const AddCourse = () => {
         formData.append('price', price);
         formData.append('details', details);
         formData.append('video', video);
+        formData.append('language', language);
+        formData.append('skill', skill);
+        formData.append('instructor', instructor);
 
         axios.post('http://localhost:5000/course', formData)
             .then(res => {
@@ -55,6 +61,18 @@ const AddCourse = () => {
                             <option value="English Spoken">English Spoken</option>
                         </Form.Select>
 
+                        <Form.Select onChange={e => setLanguage(e.target.value)} aria-label="Default select example" required>
+                            <option>Select Course Language</option>
+                            <option value="English">English</option>
+                            <option value="Bangla">Bangla</option>
+                        </Form.Select>
+
+                        <Form.Select onChange={e => setSkill(e.target.value)} aria-label="Default select example" required>
+                            <option>Select Skill Level</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                        </Form.Select>
+
                         <Form.Group controlId="formFile" className="mb-3">
                             <Form.Label>Upload Course Thumbnail</Form.Label>
                             <Form.Control type="file" onChange={e => setThumb(e.target.files[0])} required />
@@ -73,6 +91,10 @@ const AddCourse = () => {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Overview Video Link</Form.Label>
                             <Form.Control onChange={e => setVideo(e.target.value)} type="text" placeholder="Drop an over video link" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Instructor Name</Form.Label>
+                            <Form.Control onChange={e => setInstructor(e.target.value)} type="text" placeholder="Drop an over video link" required />
                         </Form.Group>
                         <Button type='submit'>Add Course</Button>
                     </Form>

@@ -3,14 +3,14 @@ import { Table } from 'react-bootstrap';
 import './AllCourse.css';
 
 
-const AllCourse = () => {
+const AdminCourses = () => {
     return (
         <div>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>First Name</th>
+                        <th>Title</th>
                         <th>Last Name</th>
                         <th>Username</th>
                     </tr>
@@ -39,4 +39,4 @@ const AllCourse = () => {
     );
 };
 
-export default AllCourse;
+export default AdminCourses;

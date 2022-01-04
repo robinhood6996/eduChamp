@@ -25,33 +25,36 @@ function DashboardDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const {logOut, user} = useFirebase()
+  const { logOut, user } = useFirebase()
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
       <List>
-          <ListItem color="inherit" button>
+        <ListItem color="inherit" button>
           <img className='me-2' style={{ height: '50px', width: '50px', borderRadius: '50%' }} src={user?.photoURL} alt="" /> <h6>{user.displayName}</h6>
-          </ListItem>
-          <ListItem as={Link} to="/home" color="inherit" button>
-            Home
-          </ListItem>
-          <ListItem as={Link} to="/dashboard" color="inherit" button>
-            Dashboard
-          </ListItem>
-          <ListItem as={Link} to="/dashboard/makeAdmin" color="inherit" button>
-            Make Admin
-          </ListItem>
-          <ListItem as={Link} to="/dashboard/enrolledAllCourse" color="inherit" button>
-            All Enrolled Course
-          </ListItem>
-          <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
-            Add Course
-          </ListItem>
-          <ListItem onClick={logOut} color="inherit" button>
-            Log Out
-          </ListItem>
+        </ListItem>
+        <ListItem as={Link} to="/home" color="inherit" button>
+          Home
+        </ListItem>
+        <ListItem as={Link} to="/dashboard" color="inherit" button>
+          Dashboard
+        </ListItem>
+        <ListItem as={Link} to="/dashboard/makeAdmin" color="inherit" button>
+          Make Admin
+        </ListItem>
+        <ListItem as={Link} to="/dashboard/enrolledAllCourse" color="inherit" button>
+          All Enrolled Course
+        </ListItem>
+        <ListItem as={Link} to="/dashboard/allCourse" color="inherit" button>
+          All Courses
+        </ListItem>
+        <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
+          Add Course
+        </ListItem>
+        <ListItem onClick={logOut} color="inherit" button>
+          Log Out
+        </ListItem>
       </List>
     </div>
   );
@@ -119,7 +122,7 @@ function DashboardDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <Toolbar /> 
+        <Toolbar />
         <Outlet></Outlet>
       </Box>
     </Box>

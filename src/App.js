@@ -24,6 +24,7 @@ import EnrolledAllCourse from './Pages/Dashboard/EnrolledAllCourse/EnrolledAllCo
 import AddCourse from './Pages/Form/AddCourse/AddCourse';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AdminRoute from './Pages/AdminRoute/AdminRoute';
+import AdminCourses from './Pages/Dashboard/AllCourse/AdminCourses';
 
 function App() {
   return (
@@ -41,10 +42,18 @@ function App() {
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} >
+<<<<<<< HEAD
           <Route path="/dashboard" element={<DashboardHome></DashboardHome>}/>
           <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
           <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
           <Route path="/dashboard/addCourse" element={<AddCourse />} />
+=======
+            <Route path="/dashboard" element={<DashboardHome></DashboardHome>} />
+            <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
+            <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
+            <Route path="/dashboard/addCourse" element={<AddCourse />} />
+            <Route path="/dashboard/allCourse" element={<AdminCourses />} />
+>>>>>>> home-page
           </Route>
           
           <Route path="/checkOut" element={<Checkout />} />
