@@ -1,54 +1,81 @@
+import axios from 'axios';
 import React, { useState } from 'react';
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 
 const AddCourse = () => {
-    const [details, setDetails] = useState({})
-    const onBlurHandle = e => {
-        const name = e.target.name
-        const value = e.target.value
-        const userDetails = { ...details }
-        userDetails[name] = value
-        setDetails(userDetails)
-    }
-    // console.log(details);
+    const [title, setTitle] = useState('');
+    const [category, setCategory] = useState('');
+    const [thumb, setThumb] = useState(null);
+    const [price, setPrice] = useState('');
+    const [details, setDetails] = useState('');
+    const [video, setVideo] = useState('');
 
-    const courseName = details.name
-    const courseImage = details.image
-    const courseDetails = details.details
-    const coursePrice = details.price
-    const courseCategory = details.category
+
 
     const addCourseHandle = e => {
-        e.preventDefault()
-        console.log(coursePrice, courseDetails, courseName, courseImage, courseCategory);
-        e.target.reset()
+        e.preventDefault();
+        if (!thumb || !price || !title) {
+            return
+        }
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('category', category);
+        formData.append('thumb', thumb);
+        formData.append('price', price);
+        formData.append('details', details);
+        formData.append('video', video);
+
+        axios.post('http://localhost:5000/course', formData)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Course Added');
+                }
+            });
+        e.target.reset();
     }
     return (
         <Container className='py-5'>
             <div className="heading mb-3">
-                <h1>Add New Course Here </h1>
+                <h1 className='fs-3'>Add New Course Here </h1>
             </div>
             <Row>
                 <Col lg='6'>
-                <form onSubmit={addCourseHandle} className='w-100 '>
-                <input onBlur={onBlurHandle} type="text" name='name' className='w-100 my-2 p-2' placeholder='Course Name' />
-                <br />
-                <select style={{ textAlign: 'left' }} onBlur={onBlurHandle} className='fs-4 ' name="category" id="cars">
-                    <option value="Programming">Programming</option>
-                    <option value="Math">Math</option>
-                    <option value="English Spoken">English Spoken</option>
-                    <option value="Nothing">Nothing</option>
-                </select>
-                <br />
-                <input onBlur={onBlurHandle} type="text" name='image' className='w-100 my-2 p-2' placeholder='Course Image Link' />
-                <br />
 
-                <textarea onBlur={onBlurHandle} name="details" placeholder='Course Details ' id="" className='w-100' cols="10" rows="5"></textarea>
-                <br />
-                <input onBlur={onBlurHandle} type="number" name='price' className='w-100 my-2 p-2' placeholder='Course Price' />
-                <br />
-                <input value="Add" type="submit" className='btn btn-success' />
-            </form>
+                    <Form onSubmit={addCourseHandle}>
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Course Title</Form.Label>
+                            <Form.Control onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter Course Title" required />
+                        </Form.Group>
+
+                        <Form.Select onChange={e => setCategory(e.target.value)} aria-label="Default select example" required>
+                            <option>Select Course Category</option>
+                            <option value="Programming">Programming</option>
+                            <option value="Math">Math</option>
+                            <option value="English Spoken">English Spoken</option>
+                        </Form.Select>
+
+                        <Form.Group controlId="formFile" className="mb-3">
+                            <Form.Label>Upload Course Thumbnail</Form.Label>
+                            <Form.Control type="file" onChange={e => setThumb(e.target.files[0])} required />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Course Price</Form.Label>
+                            <Form.Control onChange={e => setPrice(e.target.value)} type="number" placeholder="Enter Course Price" required />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label>Course Details</Form.Label>
+                            <Form.Control as="textarea" rows={3} onChange={e => setDetails(e.target.value)} required />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Label>Overview Video Link</Form.Label>
+                            <Form.Control onChange={e => setVideo(e.target.value)} type="text" placeholder="Drop an over video link" required />
+                        </Form.Group>
+                        <Button type='submit'>Add Course</Button>
+                    </Form>
                 </Col>
             </Row>
         </Container>
