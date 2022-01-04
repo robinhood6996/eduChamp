@@ -37,7 +37,8 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/makeAdmin" element={<MakeAdmin />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkOut" element={<Checkout />} />
+          
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
