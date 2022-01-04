@@ -7,6 +7,8 @@
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.7",
+    "@stripe/react-stripe-js": "^1.7.0",
+    "@stripe/stripe-js": "^1.22.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -18,6 +20,7 @@
     "react-iframe": "^1.8.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "stripe": "^8.195.0",
     "swiper": "^7.4.1",
     "web-vitals": "^2.1.2"
   },

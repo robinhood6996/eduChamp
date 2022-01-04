@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Col, Container, Form, Row } from 'react-bootstrap';
 
 const AddCourse = () => {
     const [details, setDetails] = useState({})
@@ -24,12 +24,14 @@ const AddCourse = () => {
         e.target.reset()
     }
     return (
-        <Container className='text-center py-5'>
+        <Container className='py-5'>
             <div className="heading mb-3">
                 <h1>Add New Course Here </h1>
             </div>
-            <form onSubmit={addCourseHandle} className='w-50 mx-auto'>
-                <input onBlur={onBlurHandle} type="text" name='name' className='w-50 my-2 p-2' placeholder='Course Name' />
+            <Row>
+                <Col lg='6'>
+                <form onSubmit={addCourseHandle} className='w-100 '>
+                <input onBlur={onBlurHandle} type="text" name='name' className='w-100 my-2 p-2' placeholder='Course Name' />
                 <br />
                 <select style={{ textAlign: 'left' }} onBlur={onBlurHandle} className='fs-4 ' name="category" id="cars">
                     <option value="Programming">Programming</option>
@@ -38,15 +40,17 @@ const AddCourse = () => {
                     <option value="Nothing">Nothing</option>
                 </select>
                 <br />
-                <input onBlur={onBlurHandle} type="text" name='image' className='w-50 my-2 p-2' placeholder='Course Image Link' />
+                <input onBlur={onBlurHandle} type="text" name='image' className='w-100 my-2 p-2' placeholder='Course Image Link' />
                 <br />
 
-                <textarea onBlur={onBlurHandle} name="details" placeholder='Course Details ' id="" className='w-50' cols="10" rows="5"></textarea>
+                <textarea onBlur={onBlurHandle} name="details" placeholder='Course Details ' id="" className='w-100' cols="10" rows="5"></textarea>
                 <br />
-                <input onBlur={onBlurHandle} type="number" name='price' className='w-50 my-2 p-2' placeholder='Course Price' />
+                <input onBlur={onBlurHandle} type="number" name='price' className='w-100 my-2 p-2' placeholder='Course Price' />
                 <br />
                 <input value="Add" type="submit" className='btn btn-success' />
             </form>
+                </Col>
+            </Row>
         </Container>
     );
 };
