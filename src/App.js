@@ -23,6 +23,7 @@ import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import EnrolledAllCourse from './Pages/Dashboard/EnrolledAllCourse/EnrolledAllCourse';
 import AddCourse from './Pages/Form/AddCourse/AddCourse';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import AdminRoute from './Pages/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -39,8 +40,8 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/dashboard" element={<Dashboard />} >
-          <Route exact path="/dashboard" element={<DashboardHome></DashboardHome>}/>
+          <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} >
+          <Route path="/dashboard" element={<DashboardHome></DashboardHome>}/>
           <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
           <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
           <Route path="/dashboard/addCourse" element={<AddCourse />} />

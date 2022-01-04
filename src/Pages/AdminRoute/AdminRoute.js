@@ -4,12 +4,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 import useFirebase from '../../Hooks/useFirebase';
 
 const AdminRoute = ({children, ...rest}) => {
-    const {user,isLoading, admin} = useFirebase()
+    const {user, admin} = useFirebase()
     let location = useLocation();
-    if (isLoading) { return <Stack sx={{py:5}} alignItems="center">
+    if (!admin) { return <Stack sx={{py:5}} alignItems="center">
     <CircularProgress />
     </Stack> }
-    if ( admin) {
+    if (user.email && admin) {
         return children;
     }
     return <Navigate to="/home" state={{ from: location }} />;
