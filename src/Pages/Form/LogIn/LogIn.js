@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Container, Form, Row, Col, Image } from 'react-bootstrap';
+import { Button, Form, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import loginimg from '../../../Images/blogs/2.jpg'
 import './Login.css';
 const LogIn = () => {
     const [details, setDetails] = useState({})
-    const { logOut, logInWithEmailAndPass, error, googleSignIn } = useFirebase()
+    const { logInWithEmailAndPass, error, googleSignIn } = useFirebase();
+
+
+
     const onBlurHandle = e => {
         const name = e.target.name
         const value = e.target.value
@@ -27,11 +30,11 @@ const LogIn = () => {
     return (
         <div >
 
-            <Row>
-                <Col sm={4}>
+            <Row className='py-5'>
+                <Col sm={4} >
                     <Image className='img-fluid' src={loginimg} style={{ width: '100%', verticalAlign: 'middle' }}></Image>
                 </Col>
-                <Col sm={8} className='w-65 mx-auto py-5'>
+                <Col sm={8} >
                     {/* Login Heading */}
                     <div className="heading mb-5">
                         <h1 className=''>Login to your Account </h1>
@@ -40,7 +43,7 @@ const LogIn = () => {
 
                     {/* Form */}
                     <div className="form">
-                        <Form>
+                        <Form onSubmit={logInHandle}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control onBlur={onBlurHandle} type="email" name='email' placeholder="Enter Your Email" />
@@ -67,15 +70,3 @@ const LogIn = () => {
 };
 
 export default LogIn;
-
-
-//  <form onSubmit={logInHandle} className='text-left'>
-//                 <div className="input-fields w-50  mx-auto">
-//                     <input onBlur={onBlurHandle} type="email" name='email' className='w-75 my-2 p-2' placeholder='Your Email' />
-//                     <br />
-//                     <input onBlur={onBlurHandle} type="password" name='password' className='w-75 my-2 p-2' placeholder='Your Password' />
-//                     <br />
-//                 </div>
-//                 <h6 className=' mb-2'>New to EduChamp? Please <Link to='/register'>Register</Link></h6>
-//                 <input value="Log In" type="submit" className='btn btn-success' />
-//             </form> 

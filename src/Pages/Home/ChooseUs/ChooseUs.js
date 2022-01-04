@@ -45,7 +45,7 @@ const ChooseUs = () => {
                                     <Card.Text>
                                         {d.desc}
                                     </Card.Text>
-                                    <Link to={d.btn_link} className="btn btn-danger">{d.btn_name}</Link>
+                                    <Link to={d.btn_link} className="p-2 text-center buy-btn">{d.btn_name}</Link>
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -42,7 +42,7 @@ const Navigation = () => {
                             }
 
                         </Navbar.Text>
->>>>>>> home-page
+
                     </Navbar.Collapse>
 
                 </Container>
