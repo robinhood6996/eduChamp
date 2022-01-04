@@ -6,17 +6,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, Outlet } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import useFirebase from '../../../Hooks/useFirebase';
 
 const drawerWidth = 240;
 
@@ -28,16 +25,32 @@ function DashboardDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const {logOut, user} = useFirebase()
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
       <List>
+          <ListItem color="inherit" button>
+          <img className='me-2' style={{ height: '50px', width: '50px', borderRadius: '50%' }} src={user?.photoURL} alt="" /> <h6>{user.displayName}</h6>
+          </ListItem>
           <ListItem as={Link} to="/home" color="inherit" button>
             Home
           </ListItem>
           <ListItem as={Link} to="/dashboard" color="inherit" button>
             Dashboard
+          </ListItem>
+          <ListItem as={Link} to="/dashboard/makeAdmin" color="inherit" button>
+            Make Admin
+          </ListItem>
+          <ListItem as={Link} to="/dashboard/enrolledAllCourse" color="inherit" button>
+            All Enrolled Course
+          </ListItem>
+          <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
+            Add Course
+          </ListItem>
+          <ListItem onClick={logOut} color="inherit" button>
+            Log Out
           </ListItem>
       </List>
     </div>
@@ -106,8 +119,7 @@ function DashboardDrawer(props) {
         component="main"
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
-        <Toolbar />
-        
+        <Toolbar /> 
         <Outlet></Outlet>
       </Box>
     </Box>
