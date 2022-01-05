@@ -36,7 +36,11 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/course" element={<AllCourse />} />
+          <Route path="/course" element={<>
+            <Navigation></Navigation>
+            <AllCourse />
+            <Footer></Footer>
+          </>} />
           <Route path="/course/:id" element={<SingleCourse />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />

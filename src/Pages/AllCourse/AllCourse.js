@@ -22,7 +22,6 @@ const AllCourse = () => {
 
   return (
     <div >
-      <Navigation></Navigation>
       <Container className='py-5'>
         <Row>
           <Col lg={3}>
@@ -98,7 +97,6 @@ const AllCourse = () => {
           </Col>
         </Row>
       </Container>
-      <Footer></Footer>
     </div>
   );
 };
