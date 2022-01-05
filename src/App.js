@@ -25,6 +25,7 @@ import AddCourse from './Pages/Form/AddCourse/AddCourse';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AdminRoute from './Pages/AdminRoute/AdminRoute';
 import AdminCourses from './Pages/Dashboard/AllCourse/AdminCourses';
+import UserCourses from './Pages/Dashboard/UserCouses/UserCourses';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
             <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
             <Route path="/dashboard/addCourse" element={<AddCourse />} />
             <Route path="/dashboard/allCourse" element={<AdminCourses />} />
+            <Route path="/dashboard/mycourse" element={<UserCourses />} />
 
           </Route>
 

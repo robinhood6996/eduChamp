@@ -11,6 +11,14 @@ const AllCourse = () => {
       .then(data => setCourse(data))
   }, []);
 
+  if (course.length === 0) {
+
+    return <Stack sx={{ py: 5 }} alignItems="center">
+      <CircularProgress />
+    </Stack>
+
+  }
+
   return (
     <div className='py-5'>
       <Container>

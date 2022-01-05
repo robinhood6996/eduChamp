@@ -52,6 +52,9 @@ function DashboardDrawer(props) {
         <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
           Add Course
         </ListItem>
+        <ListItem as={Link} to="/dashboard/mycourse" color="inherit" button>
+          My Course
+        </ListItem>
         <ListItem onClick={logOut} color="inherit" button>
           Log Out
         </ListItem>
