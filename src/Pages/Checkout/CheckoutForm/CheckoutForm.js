@@ -15,8 +15,6 @@ const CheckoutForm = ({ course }) => {
   const [processing, setProcessing] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const totalAmount = 500
-
   useEffect(() => {
     fetch('http://localhost:5000/create-payment-intent', {
       method: "POST",

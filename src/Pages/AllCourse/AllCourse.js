@@ -1,3 +1,4 @@
+import { CircularProgress, Stack } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,15 @@ const AllCourse = () => {
     fetch('http://localhost:5000/course')
       .then(res => res.json())
       .then(data => setCourse(data))
-  }, [])
+  }, []);
+
+  if (course.length === 0) {
+
+    return <Stack sx={{ py: 5 }} alignItems="center">
+      <CircularProgress />
+    </Stack>
+
+  }
   return (
     <div className='py-5'>
       <Container>
