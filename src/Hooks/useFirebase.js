@@ -13,13 +13,19 @@ const useFirebase = () => {
   const [admin, setAdmin] = useState(false)
   let navigate = useNavigate()
   /* ============ Register with email and password=============== */
-  const registerWithGoogleAndPass = (email, password, name, image) => {
+  const registerWithGoogleAndPass = (email, password, name, image,path) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         saveUserToDB(email, name, image, 'POST')
         setError('')
         setIsLoading(true)
+        if(path){
+          navigate(path)
+        }
+        else{
+          navigate('/')
+        }
         updateProfile(auth.currentUser, {
           displayName: name, photoURL: image
         }).then(() => {
@@ -61,7 +67,7 @@ const useFirebase = () => {
       })
   }
 
-  const googleSignIn = () => {
+  const googleSignIn = (path) => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
@@ -69,6 +75,12 @@ const useFirebase = () => {
         setUser(user)
         setError('')
         setIsLoading(true)
+        if(path){
+          navigate(path)
+        }
+        else{
+          navigate('/')
+        }
       }).catch((error) => {
         const errorMessage = error.message;
         setError(errorMessage)
