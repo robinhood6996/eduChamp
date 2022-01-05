@@ -12,7 +12,8 @@ const UserCourses = () => {
             .then(res => {
                 setCourses(res.data);
             })
-    }, [email])
+    }, [email]);
+
 
     return (
         <div>

@@ -1,13 +1,29 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
-const SingleCourse = () => {
+const SingleCourse = ({ course }) => {
+    const [allCourse, setAllCourse] = useState([]);
+    const [singleCourse, setSingleCourse] = useState({});
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/course')
+            .then(res => {
+                setAllCourse(res.data);
+            })
+    }, []);
+
+    const getCourse = allCourse.find(c => c._id === course.course_id);
+    if (!getCourse) {
+        return '';
+    }
+
     return (
         <div>
             <div className="col-md-10" key={1}>
                 <div className="row p-2 bg-white border rounded">
-                    <div className="col-md-3 mt-1"><img className="img-fluid  rounded product-image h-100" src="https://i.imgur.com/QpjAiHq.jpg" alt="None" /></div>
+                    <div className="col-md-3 mt-1"><img className="img-fluid  rounded product-image h-100" src={`data:image/*;base64,${getCourse?.thumb}`} alt="None" /></div>
                     <div className="col-md-6 mt-1">
-                        <h5>Course Name</h5>
+                        <h5>{getCourse.title}</h5>
                         <div className="d-flex flex-row">
                             <div className="ratings mr-2"><i className="fa fa-star" /><i className="fa fa-star" /><i className="fa fa-star" /><i className="fa fa-star" /></div><span>310</span>
                         </div>
@@ -16,7 +32,7 @@ const SingleCourse = () => {
                     </div>
                     <div className="align-items-center align-content-center col-md-3 border-left mt-1">
                         <div className="d-flex flex-row align-items-center">
-                            <h4 className="mr-1">$13.99</h4>
+                            <h4 className="mr-1">${getCourse.price}</h4>
                         </div>
                         <h6 className="text-success">Paid</h6>
                         <h4 className="mr-1">Owned By</h4>
