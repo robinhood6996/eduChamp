@@ -5,6 +5,8 @@ import { Col, Container, Image, Row, Stack } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
+import Footer from '../Shared/Footer/Footer';
+import Navigation from '../Shared/Navigation/Navigation';
 
 
 const SingleCourse = () => {
@@ -28,6 +30,7 @@ const SingleCourse = () => {
 
     return (
         <div>
+            <Navigation></Navigation>
             <div className="course-brand">
                 <div className="container">
                     <div className="course-page-heading">
@@ -134,6 +137,7 @@ const SingleCourse = () => {
                     </Row>
                 </Container>
             </section>
+            <Footer></Footer>
         </div >
     );
 };

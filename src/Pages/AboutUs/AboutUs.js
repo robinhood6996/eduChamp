@@ -1,6 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Review from '../Home/Review/Review';
+import Footer from '../Shared/Footer/Footer';
+import Navigation from '../Shared/Navigation/Navigation';
 import OurStory from './OurStory/OurStory';
 
 const data = [
@@ -23,6 +25,8 @@ const data = [
 ]
 const AboutUs = () => {
     return (
+        <>
+        <Navigation></Navigation>
         <div className='py-5'>
             <Container>
                 <Row>
@@ -38,6 +42,9 @@ const AboutUs = () => {
                 <Review></Review>
             </Container>
         </div>
+        <Footer></Footer>
+        </>
+        
     );
 };
 

@@ -2,6 +2,7 @@ import { CircularProgress, Stack } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Footer from '../Shared/Footer/Footer';
 import Navigation from '../Shared/Navigation/Navigation'
 const AllCourse = () => {
   const [course, setCourse] = useState([])
@@ -21,7 +22,7 @@ const AllCourse = () => {
 
   return (
     <div >
-              <Navigation></Navigation>
+      <Navigation></Navigation>
       <Container className='py-5'>
         <Row>
           <Col lg={3}>
@@ -97,6 +98,7 @@ const AllCourse = () => {
           </Col>
         </Row>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };
