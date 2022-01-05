@@ -25,7 +25,7 @@ function DashboardDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const { logOut, user , admin} = useFirebase()
+  const { logOut, user, admin } = useFirebase()
   const drawer = (
     <div>
       <Toolbar />
@@ -42,17 +42,17 @@ function DashboardDrawer(props) {
         </ListItem>
         {
           admin && <><ListItem as={Link} to="/dashboard/makeAdmin" color="inherit" button>
-          Make Admin
-        </ListItem>
-        <ListItem as={Link} to="/dashboard/enrolledAllCourse" color="inherit" button>
-          All Enrolled Course
-        </ListItem>
-        <ListItem as={Link} to="/dashboard/allCourse" color="inherit" button>
-          All Courses
-        </ListItem>
-        <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
-          Add Course
-        </ListItem> </>
+            Make Admin
+          </ListItem>
+            <ListItem as={Link} to="/dashboard/enrolledAllCourse" color="inherit" button>
+              All Enrolled Course
+            </ListItem>
+            <ListItem as={Link} to="/dashboard/allCourse" color="inherit" button>
+              All Courses
+            </ListItem>
+            <ListItem as={Link} to="/dashboard/addCourse" color="inherit" button>
+              Add Course
+            </ListItem> </>
         }
         <ListItem as={Link} to="/dashboard/mycourse" color="inherit" button>
           My Course

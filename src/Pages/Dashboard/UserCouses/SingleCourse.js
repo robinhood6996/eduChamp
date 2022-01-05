@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 const SingleCourse = ({ course }) => {
     const [allCourse, setAllCourse] = useState([]);
-    const [singleCourse, setSingleCourse] = useState({});
 
     useEffect(() => {
         axios.get('http://localhost:5000/course')

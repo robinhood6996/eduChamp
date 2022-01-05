@@ -13,17 +13,17 @@ const useFirebase = () => {
   const [admin, setAdmin] = useState(false)
   let navigate = useNavigate()
   /* ============ Register with email and password=============== */
-  const registerWithGoogleAndPass = (email, password, name, image,path) => {
+  const registerWithGoogleAndPass = (email, password, name, image, path) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         saveUserToDB(email, name, image, 'POST')
         setError('')
         setIsLoading(true)
-        if(path){
+        if (path) {
           navigate(path)
         }
-        else{
+        else {
           navigate('/')
         }
         updateProfile(auth.currentUser, {
@@ -31,7 +31,7 @@ const useFirebase = () => {
         }).then(() => {
           setUser(user)
           setError('')
-          
+
         }).catch((error) => {
           setError(error.message)
         });
@@ -51,10 +51,10 @@ const useFirebase = () => {
         setUser(user)
         setError('')
         setIsLoading(true)
-        if(path){
+        if (path) {
           navigate(path)
         }
-        else{
+        else {
           navigate('/')
         }
       })
@@ -75,10 +75,10 @@ const useFirebase = () => {
         setUser(user)
         setError('')
         setIsLoading(true)
-        if(path){
+        if (path) {
           navigate(path)
         }
-        else{
+        else {
           navigate('/')
         }
       }).catch((error) => {
@@ -96,18 +96,19 @@ const useFirebase = () => {
 
   /* ===== Observer user State ====== */
   useEffect(() => {
+    setIsLoading(true)
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user)
-
+        setIsLoading(false)
       } else {
         setUser({})
       }
-        setIsLoading(false)
+      setIsLoading(false)
     });
     return () => unSubscribe;
   }, [auth])
-  
+
   const saveUserToDB = (email, displayName, photoURL, method) => {
     const user = { email, displayName, photoURL };
     fetch('http://localhost:5000/users', {
@@ -120,12 +121,16 @@ const useFirebase = () => {
         // console.log(data);
       })
   }
-    // admin check 
-    useEffect(() => {
-      fetch(`http://localhost:5000/users/${user.email}`)
-          .then(res => res.json())
-          .then(data => setAdmin(data.admin))
-    }, [user.email])
+  // admin check 
+  useEffect(() => {
+    setIsLoading(true)
+    fetch(`http://localhost:5000/users/${user?.email}`)
+      .then(res => res.json())
+      .then(data => {
+        setAdmin(data.admin);
+        setIsLoading(false)
+      })
+  }, [user.email])
 
   const logOut = () => {
     signOut(auth).then(() => {

@@ -10,7 +10,10 @@ const EnrolledAllCourse = () => {
       .then(res => {
         setCourses(res.data)
       })
-  }, [])
+  }, []);
+
+
+
   return (
     <div>
       <Table striped bordered hover>

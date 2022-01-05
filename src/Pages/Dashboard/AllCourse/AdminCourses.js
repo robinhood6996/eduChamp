@@ -52,7 +52,7 @@ const AdminCourses = () => {
                 </thead>
                 <tbody>
                     {
-                        courses.map((course, index) => <tr>
+                        courses.length === 0 ? 'You Havenot any order' : courses.map((course, index) => <tr>
                             <td>{index}</td>
                             <td>{course.title}</td>
                             <td>{course.category}</td>
@@ -60,6 +60,7 @@ const AdminCourses = () => {
                             <td><Button variant={"warning"}>Edit</Button> || <Button variant={"danger"} onClick={() => deleteCourseHandle(course._id)}>Delete</Button></td>
                         </tr>)
                     }
+
 
                 </tbody>
             </Table>

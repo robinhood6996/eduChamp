@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,11 +16,23 @@ import SwiperCore, {
     FreeMode, Pagination
 } from 'swiper';
 import { Button, Card, Col, Row } from "react-bootstrap";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 // install Swiper modules
 SwiperCore.use([FreeMode, Pagination]);
 
 const PopularCourse = () => {
+    const [courses, setCourses] = useState([]);
+
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/course')
+            .then(res => {
+                setCourses(res.data)
+            })
+    }, []);
+
     return (
         <div className='popular-course-section pt-5 pb-5'>
             <div className='container mb-4 popular-course-section'>
@@ -56,83 +68,27 @@ const PopularCourse = () => {
                         "disableOnInteraction": false
                     }} className="mySwiper">
                         <Row xs={1} md={2} className="g-4">
-                            <SwiperSlide>
-                                <Col>
-                                    <Card>
-                                        <Card.Img variant="top" src={php} />
-                                        <Card.Body>
-                                            <p className="fw-bold" style={{ color: '#A3A2A4' }}>Programming</p>
-                                            <Card.Title style={{ fontWeight: 'bold' }}>Learn PHP Programming From Scratch</Card.Title>
-                                            <Card.Text>
-                                                This is a longer card with supporting text below as a natural
-                                                lead-in to additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                            <div className="price-review d-flex justify-content-between align-items-center">
-                                                <div className="price"><p className="fw-bold fs-4">$120</p></div>
-                                                <div className="buy-btn"><Button variation="success" className="buy-btn">Enroll Now</Button></div>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Col>
-                                    <Card>
-                                        <Card.Img variant="top" src={php} />
-                                        <Card.Body>
-                                            <p className="fw-bold" style={{ color: '#A3A2A4' }}>Programming</p>
-                                            <Card.Title style={{ fontWeight: 'bold' }}>Learn PHP Programming From Scratch</Card.Title>
-                                            <Card.Text>
-                                                This is a longer card with supporting text below as a natural
-                                                lead-in to additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                            <div className="price-review d-flex justify-content-between align-items-center">
-                                                <div className="price"><p className="fw-bold fs-4">$120</p></div>
-                                                <div className="buy-btn"><Button variation="success" className="buy-btn">Enroll Now</Button></div>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Col>
-                                    <Card>
-                                        <Card.Img variant="top" src={php} />
-                                        <Card.Body>
-                                            <p className="fw-bold" style={{ color: '#A3A2A4' }}>Programming</p>
-                                            <Card.Title style={{ fontWeight: 'bold' }}>Learn PHP Programming From Scratch</Card.Title>
-                                            <Card.Text>
-                                                This is a longer card with supporting text below as a natural
-                                                lead-in to additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                            <div className="price-review d-flex justify-content-between align-items-center">
-                                                <div className="price"><p className="fw-bold fs-4">$120</p></div>
-                                                <div className="buy-btn"><Button variation="success" className="buy-btn">Enroll Now</Button></div>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <Col>
-                                    <Card>
-                                        <Card.Img variant="top" src={php} />
-                                        <Card.Body>
-                                            <p className="fw-bold" style={{ color: '#A3A2A4' }}>Programming</p>
-                                            <Card.Title style={{ fontWeight: 'bold' }}>Learn PHP Programming From Scratch</Card.Title>
-                                            <Card.Text>
-                                                This is a longer card with supporting text below as a natural
-                                                lead-in to additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                            <div className="price-review d-flex justify-content-between align-items-center">
-                                                <div className="price"><p className="fw-bold fs-4">$120</p></div>
-                                                <div className="buy-btn"><Button variation="success" className="buy-btn">Enroll Now</Button></div>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </SwiperSlide>
 
+                            {
+                                courses.map(course => (<SwiperSlide key={course._id}>
+                                    <Col>
+                                        <Card>
+                                            <Card.Img variant="top" src={`data:image/*;base64,${course.thumb}`} />
+                                            <Card.Body>
+                                                <p className="fw-bold" style={{ color: '#A3A2A4' }}>{course.category}</p>
+                                                <Card.Title style={{ fontWeight: 'bold' }}>{course.title}</Card.Title>
+                                                <Card.Text>
+                                                    {course.details.slice(0, 80)}
+                                                </Card.Text>
+                                                <div className="price-review d-flex justify-content-between align-items-center">
+                                                    <div className="price"><p className="fw-bold fs-4">${course.price}</p></div>
+                                                    <div className="buy-btn"><button className="buy-btn"><Link to={`/course/${course._id}`}>Enroll Now</Link></button></div>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                </SwiperSlide>))
+                            }
                         </Row>
                     </Swiper>
                 </div>
