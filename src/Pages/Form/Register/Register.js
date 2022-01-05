@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import AddCourse from '../AddCourse/AddCourse';
 import './Register.css';
@@ -8,6 +8,9 @@ import './Register.css';
 const Register = () => {
     const [details, setDetails] = useState({})
     const { registerWithGoogleAndPass, logOut, error, setError } = useFirebase()
+    const location = useLocation()
+    const pathname = location.state?.from?.pathname
+
     const onBlurHandle = e => {
         const name = e.target.name
         const value = e.target.value
@@ -23,7 +26,7 @@ const Register = () => {
     const registerHandle = e => {
         e.preventDefault()
         if (password === confirmPassword) {
-            registerWithGoogleAndPass(email, password, name, image)
+            registerWithGoogleAndPass(email, password, name, image,pathname)
             setError('')
         }
         else {

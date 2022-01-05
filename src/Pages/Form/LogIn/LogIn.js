@@ -27,6 +27,10 @@ const LogIn = () => {
         logInWithEmailAndPass(email, password, pathname )
         e.target.reset()
     }
+    const googleSign = () => {
+        googleSignIn(pathname)
+        
+    }
     // Container className = 'login-area py-5'
     return (
         <div >
@@ -58,7 +62,7 @@ const LogIn = () => {
                         <h5 className='text-danger my-1'>{error}</h5>
                         <div className="google-btn mt-5">
                             <h5>Login With Social Media</h5>
-                            <button onClick={googleSignIn} className=" google-login">Google Sign In</button>
+                            <button onClick={() => googleSign} className=" google-login">Google Sign In</button>
                         </div>
                     </div>
                 </Col>
