@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import logo from '../../../Images/logo-white.png';
 const Navigation = () => {
-    const { user, logOut , admin} = useFirebase()
+    const { user, logOut, admin } = useFirebase()
     console.log(admin);
     return (
         <div>
@@ -18,7 +18,7 @@ const Navigation = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="mx-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/allCourse">Courses</Nav.Link>
+                            <Nav.Link as={Link} to="/course">Courses</Nav.Link>
                             <Nav.Link as={Link} to="/aboutUs">About us</Nav.Link>
                             <Nav.Link as={Link} to="/blogs">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/contactUs">Contact us</Nav.Link>

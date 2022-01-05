@@ -1,6 +1,7 @@
+import { CircularProgress } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Button, Table } from 'react-bootstrap';
+import { Button, Stack, Table } from 'react-bootstrap';
 import './AllCourse.css';
 
 
@@ -29,6 +30,12 @@ const AdminCourses = () => {
                     }
                 })
         }
+    }
+
+    if (courses.length === 0) {
+        return <Stack sx={{ py: 5 }} alignItems="center" className='w-25 mx-auto text-center'>
+            <CircularProgress />
+        </Stack>
     }
     return (
         <div>

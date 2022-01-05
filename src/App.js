@@ -36,8 +36,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/allCourse" element={<PrivateRoute><AllCourse /></PrivateRoute>} />
-          <Route path="/course" element={<SingleCourse />} />
+          <Route path="/course" element={<PrivateRoute><AllCourse /></PrivateRoute>} />
+          <Route path="/course/:id" element={<SingleCourse />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />

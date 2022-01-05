@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const AllCourse = () => {
   const [course, setCourse] = useState([])
   useEffect(() => {
-    fetch('https://warm-plateau-98820.herokuapp.com/places')
+    fetch('http://localhost:5000/course')
       .then(res => res.json())
       .then(data => setCourse(data))
   }, [])
@@ -67,11 +67,11 @@ const AllCourse = () => {
                   course.map(c =>
                     <Col >
                       <Card>
-                        <Card.Img style={{ height: '300px' }} variant="top" src={c.image} />
+                        <Card.Img className='img-fluid' style={{ height: '300px' }} variant="top" src={`data:image/jpeg;base64,${c.thumb}`} />
                         <Card.Body>
-                          <Card.Title><Link to=''>{c.name}</Link></Card.Title>
+                          <Card.Title><Link to=''>{c.title}</Link></Card.Title>
                           <Card.Text>
-                            {c.details.slice(0, 150)}
+                            {c.details.slice(0, 80)}
                           </Card.Text>
                           <Card.Text>
                             {c.date}
