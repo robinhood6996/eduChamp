@@ -1,3 +1,4 @@
+import { CircularProgress, Stack } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -62,7 +63,10 @@ const AllCourse = () => {
           </Col>
           <Col lg={8}>
             <div className="course">
-              <Row xs={1} md={2} lg={3} className="g-4">
+              {Object.keys(course).length === 0 ? <Stack sx={{py:5}} alignItems="center">
+            <CircularProgress />
+            </Stack>
+                : <Row xs={1} md={2} lg={3} className="g-4">
                 {
                   course.map(c =>
                     <Col key={c._id} >
@@ -83,6 +87,7 @@ const AllCourse = () => {
                 }
 
               </Row>
+              }
             </div>
           </Col>
         </Row>

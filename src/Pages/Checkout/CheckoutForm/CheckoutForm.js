@@ -15,8 +15,8 @@ const CheckoutForm = ({ course }) => {
   const [processing, setProcessing] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const totalAmount = 500
 
+  console.log(price,title);
   useEffect(() => {
     fetch('http://localhost:5000/create-payment-intent', {
       method: "POST",
@@ -73,17 +73,32 @@ const CheckoutForm = ({ course }) => {
       setError('');
       setProcessing(false)
       setSuccess(true)
-      //   const payment = {
-      //     amount: paymentIntent.amount,
-      //     created: paymentIntent.created,
-      //     last4: paymentMethod.card.last4,
-      //     transaction: paymentIntent.client_secret.slice('_secret')[0]
-      // }
+        const payment = {
+          amount: paymentIntent.amount,
+          created: paymentIntent.created,
+          last4: paymentMethod.card.last4,
+          transaction: paymentIntent.client_secret.slice('_secret')[0]       
+      }
+      
+      const course = {
+        _id, title, price, owner : user?.email, name : user?.displayName
+      }
+      const url = `http://localhost:5000/enroll`;
+      fetch(url, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(course)
+      })
+        .then(res => res.json())
+        .then(data => console.log(data));
 
     }
 
 
   }
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
