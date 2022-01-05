@@ -36,11 +36,12 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/course" element={<PrivateRoute><AllCourse /></PrivateRoute>} />
+          <Route path="/course" element={<AllCourse />} />
           <Route path="/course/:id" element={<SingleCourse />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
           <Route path="/dashboard" element={<Dashboard />} >
             <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
             <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />

@@ -65,7 +65,7 @@ const AllCourse = () => {
               <Row xs={1} md={2} lg={3} className="g-4">
                 {
                   course.map(c =>
-                    <Col >
+                    <Col key={c._id} >
                       <Card>
                         <Card.Img className='img-fluid' style={{ height: '300px' }} variant="top" src={`data:image/jpeg;base64,${c.thumb}`} />
                         <Card.Body>
@@ -76,7 +76,7 @@ const AllCourse = () => {
                           <Card.Text>
                             {c.date}
                           </Card.Text>
-                          <button className="btn btn-warning"><Link to="/course">View Details</Link></button>
+                          <button className="btn btn-warning"><Link to={`/course/${c._id}`}>View Details</Link></button>
                         </Card.Body>
                       </Card>
                     </Col>)
