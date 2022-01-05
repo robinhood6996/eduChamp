@@ -9,7 +9,8 @@ const AllCourse = () => {
     fetch('http://localhost:5000/course')
       .then(res => res.json())
       .then(data => setCourse(data))
-  }, [])
+  }, []);
+
   return (
     <div className='py-5'>
       <Container>
@@ -63,10 +64,7 @@ const AllCourse = () => {
           </Col>
           <Col lg={8}>
             <div className="course">
-              {Object.keys(course).length === 0 ? <Stack sx={{py:5}} alignItems="center">
-            <CircularProgress />
-            </Stack>
-                : <Row xs={1} md={2} lg={3} className="g-4">
+              <Row xs={1} md={2} lg={3} className="g-4">
                 {
                   course.map(c =>
                     <Col key={c._id} >
@@ -85,9 +83,7 @@ const AllCourse = () => {
                       </Card>
                     </Col>)
                 }
-
               </Row>
-              }
             </div>
           </Col>
         </Row>
