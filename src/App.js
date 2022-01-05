@@ -44,11 +44,11 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/checkout/:id" element={<Checkout />} />
           <Route path="/dashboard" element={<Dashboard />} >
-            <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
-            <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
-            <Route path="/dashboard/addCourse" element={<AddCourse />} />
-            <Route path="/dashboard/allCourse" element={<AdminCourses />} />
-            <Route path="/dashboard/mycourse" element={<UserCourses />} />
+          <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
+          <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
+          <Route path="/dashboard/addCourse" element={<AddCourse />} />
+          <Route path="/dashboard/allCourse" element={<AdminCourses />} />
+          <Route path="/dashboard/mycourse" element={<UserCourses />} />
 
           </Route>
 

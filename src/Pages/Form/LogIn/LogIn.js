@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form, Row, Col, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import loginimg from '../../../Images/blogs/2.jpg'
 import './Login.css';
 const LogIn = () => {
     const [details, setDetails] = useState({})
+    const location = useLocation()
+    const pathname = location.state?.from?.pathname
+
     const { logInWithEmailAndPass, error, googleSignIn } = useFirebase();
-
-
 
     const onBlurHandle = e => {
         const name = e.target.name
@@ -23,7 +24,7 @@ const LogIn = () => {
     const logInHandle = e => {
 
         e.preventDefault()
-        logInWithEmailAndPass(email, password)
+        logInWithEmailAndPass(email, password, pathname )
         e.target.reset()
     }
     // Container className = 'login-area py-5'

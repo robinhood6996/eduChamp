@@ -1,6 +1,7 @@
 import firebaseInitializing from "../Firebase/firebase.init"
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 firebaseInitializing()
 const useFirebase = () => {
@@ -10,6 +11,7 @@ const useFirebase = () => {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [admin, setAdmin] = useState(false)
+  let navigate = useNavigate()
   /* ============ Register with email and password=============== */
   const registerWithGoogleAndPass = (email, password, name, image) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -35,7 +37,7 @@ const useFirebase = () => {
 
   }
 
-  const logInWithEmailAndPass = (email, password) => {
+  const logInWithEmailAndPass = (email, password, path) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
 
@@ -43,6 +45,12 @@ const useFirebase = () => {
         setUser(user)
         setError('')
         setIsLoading(true)
+        if(path){
+          navigate(path)
+        }
+        else{
+          navigate('/')
+        }
       })
       .catch((error) => {
         const errorMessage = error.message;
