@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 import AddCourse from '../AddCourse/AddCourse';
 import './Register.css';
 
@@ -36,6 +38,8 @@ const Register = () => {
         e.target.reset()
     }
     return (
+       <>
+        <Navigation></Navigation>
         <div className='register-form'>
             <Container className='text-center py-5'>
                 <div className="heading mb-3">
@@ -59,6 +63,8 @@ const Register = () => {
 
             </Container>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

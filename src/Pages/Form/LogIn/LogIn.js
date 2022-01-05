@@ -3,6 +3,8 @@ import { Button, Form, Row, Col, Image } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import useFirebase from '../../../Hooks/useFirebase';
 import loginimg from '../../../Images/blogs/2.jpg'
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 import './Login.css';
 const LogIn = () => {
     const [details, setDetails] = useState({})
@@ -34,7 +36,7 @@ const LogIn = () => {
     // Container className = 'login-area py-5'
     return (
         <div >
-
+                    <Navigation></Navigation>
             <Row className='py-5'>
                 <Col sm={4} >
                     <Image className='img-fluid' src={loginimg} style={{ width: '100%', verticalAlign: 'middle' }}></Image>
@@ -67,8 +69,7 @@ const LogIn = () => {
                     </div>
                 </Col>
             </Row>
-
-
+            <Footer></Footer>
         </div>
 
     );

@@ -2,7 +2,7 @@ import { CircularProgress, Stack } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import Navigation from '../Shared/Navigation/Navigation'
 const AllCourse = () => {
   const [course, setCourse] = useState([])
   useEffect(() => {
@@ -20,8 +20,9 @@ const AllCourse = () => {
   }
 
   return (
-    <div className='py-5'>
-      <Container>
+    <div >
+              <Navigation></Navigation>
+      <Container className='py-5'>
         <Row>
           <Col lg={3}>
             <div className="allCourse mb-5">

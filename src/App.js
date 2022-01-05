@@ -31,7 +31,6 @@ function App() {
   return (
     <div className="body">
       <BrowserRouter>
-        <Navigation></Navigation>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -42,20 +41,19 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/checkout/:id" element={<Checkout />} />
-          <Route path="/dashboard" element={<Dashboard />} >
-          <Route path="/dashboard/makeAdmin" element={<MakeAdmin />} />
-          <Route path="/dashboard/enrolledAllCourse" element={<EnrolledAllCourse />} />
-          <Route path="/dashboard/addCourse" element={<AddCourse />} />
-          <Route path="/dashboard/allCourse" element={<AdminCourses />} />
+          <Route path="/checkout/:id" element={<PrivateRoute><Checkout /></PrivateRoute>} />
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} >
+          <Route path="/dashboard/makeAdmin" element={<AdminRoute><MakeAdmin /></AdminRoute>} />
+          <Route path="/dashboard/enrolledAllCourse" element={<AdminRoute><EnrolledAllCourse /></AdminRoute>} />
+          <Route path="/dashboard/addCourse" element={<AdminRoute><AddCourse /></AdminRoute>} />
+          <Route path="/dashboard/allCourse" element={<AdminRoute><AdminCourses /></AdminRoute>} />
           <Route path="/dashboard/mycourse" element={<UserCourses />} />
 
           </Route>
 
-          <Route path="/checkOut" element={<Checkout />} />
+          <Route path="/checkOut" element={<PrivateRoute></PrivateRoute>} />
 
         </Routes>
-        <Footer></Footer>
       </BrowserRouter>
     </div>
   );
